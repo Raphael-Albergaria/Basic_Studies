@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso de HTML</title>
+        <style>
+            .main-header {
+                color: white;
+                background: #000;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="main-header">
+            <ul>
+                <li><a href="blog.html">Meu Blog</a></li>
+            </ul>
+        </nav>
+        <!--Cabeçalhos-->
+        <h1>Nível 1</h1>
+        <h2>Nível 2</h2>
+        <h3>Nível 3</h3>
+        <h4>Nível 4</h4>
+        <h5>Nível 5</h5>
+        <h6>Nível 6</h6>
+        <!--Parágrafo-->
+        <p>
+            Lorem ipsum dolor sit <strong>amet</strong>consectetur adipisicing
+            elit. Voluptate reiciendis provident a tempore, ipsa quo vitae,
+            doloribus hic eaque id saepe sed culpa atque quisquam omnis amet
+            fuga quod expedita?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            reiciendis provident a <em>tempore</em>, ipsa quo vitae, doloribus
+            hic eaque id saepe sed culpa atque quisquam omnis amet fuga quod
+            expedita?
+        </p>
+        <!-- Links-->
+        <a href="https://google.com" target="_blank">Google</a>
+
+        <!-- Tables -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Idade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Raphael</td>
+                    <td>rapha@mail.com</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>Caroline</td>
+                    <td>carol@mail.com</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>MiKe</td>
+                    <td>mike@mail.com</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+
+        <!-- Formulários -->
+        <form action="form.php" method="POST">
+            <div>
+                <label for="">Primeiro Nome:</label>
+                <input type="text" placeholder="Primeiro Nome" />
+            </div>
+            <div>
+                <label for="">Segundo Nome:</label>
+                <input type="text" placeholder="Segundo Nome" />
+            </div>
+            <div>
+                <label for="">Email:</label>
+                <input type="email" placeholder="Seu Email" />
+            </div>
+            <div>
+                <label for="">Gênero</label>
+                <select name="" id="">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Data de nacimento:</label>
+                <input type="date" />
+            </div>
+            <div>
+                <label for="">Senha:</label>
+                <input type="password" />
+            </div>
+            <div>
+                <label for="">Mensagem:</label>
+                <textarea name="mensagem" id="" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" />
+        </form>
+
+        <!-- Botões -->
+        <button>Click me</button>
+        <br />
+        <!-- Imagens -->
+        <img
+            src="./img/imagemSimple.jpeg"
+            alt="Três pinguins"
+            width="100"
+            height=""
+        />
+
+        <!-- Blockquote -->
+        <blockquote cite="Dicas para Devs">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+            assumenda hic suscipit soluta ab laboriosam, asperiores repellendus,
+            aut voluptatibus saepe earum, facere vitae sed maiores autem quaerat
+            nihil quod nemo!
+        </blockquote>
+
+        <!-- Abreviação -->
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            possimus illum quibusdam voluptas itaque at voluptates ea impedit
+            labore
+            <abbr title="mensagem">msg</abbr> error tempora beatae animi natus,
+            iure maxime saepe libero illo.
+        </p>
+
+        <!-- Cite -->
+
+        <p>
+            Lorem <cite>ipsum dolor sit </cite> amet consectetur adipisicing
+            elit. Dolorem cupiditate repellat inventore explicabo esse eius
+            pariatur recusandae tempore autem, delectus ratione consequuntur
+            molestias ullam nisi quae sequi atque alias voluptate.
+        </p>
+    </body>
+</html>
