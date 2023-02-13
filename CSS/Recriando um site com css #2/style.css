@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+}
+div.post h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}
+.post-container {
+    width: 70%;
+    height: 100%;
+    margin: 0px auto;
+    background-color: #fffafa;
+}
+.post-container .date {
+    font-family: 'Roboto', sans-serif;
+    color: #008080;
+}
+.post-container div.post-content {
+    width: 90%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+.post-container div.post {
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* Fontes utilizadas:
+1. Elemento H1 = Montserrat
+2. Elementos com a classe date = Roboto
+3. Elementos com a classe post-content = Open Sans
+
+Cores:
+1. Background dos posts = #fffafa
+2. Cor da data = #008080 */

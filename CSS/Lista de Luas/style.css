@@ -1,3 +1,17 @@
-li {
-  color: green;
+h1 {
+    font-size: 50px;
+    color: #deb877;
+    border: 2px solid #c67305;
+}
+h4 {
+    font-size: 30px;
+    color: #1f75a4;
+}
+.moon {
+    color: #40adc6;
+}
+body {
+    background-image: url(https://universemagazine.com/wp-content/uploads/2022/06/daniel-olah-04rhrsalomu-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
