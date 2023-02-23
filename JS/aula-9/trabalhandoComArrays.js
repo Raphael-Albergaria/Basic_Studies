@@ -49,7 +49,8 @@ console.log(indexElement)
 //slice(start, finish)
 const primeiroSemestre = mesesAno.slice(0, 6)
 const segundoSemestre = mesesAno.slice(-6)
-const sementres = mesesAno.slice(0)
+// const sementres = mesesAno.slice(0)
+const sementres = [...mesesAno]
 
 console.log(primeiroSemestre)
 console.log(segundoSemestre)
