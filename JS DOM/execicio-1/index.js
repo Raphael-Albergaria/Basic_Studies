@@ -1,6 +1,3 @@
-const jogadoresEscalados = []
-const jogador = {}
-
 function escalarJogador() {
     let position = document.getElementById('position').value
 
