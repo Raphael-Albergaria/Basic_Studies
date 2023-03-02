@@ -4,7 +4,7 @@ function creatLabel(text, htmlFor) {
     label.innerText = text
     return label
 }
-function creatInputs(id, value, name, type = 'text', placeholder = '') {
+function creatInputs(id, name, value = '', type = 'text', placeholder = '') {
     const input = document.createElement('input')
     input.id = id
     input.value = value
@@ -14,12 +14,12 @@ function creatInputs(id, value, name, type = 'text', placeholder = '') {
     return input
 }
 
-const addTachBtn = document.getElementById('addTachBtn')
+const addTachBtn = document.getElementById('addTechBtn')
 const form = document.getElementById('devForm')
 const developers = []
-const inputRows = 0
+let inputRows = 0
 
-addTachBtn.addEventListener('click', ev => {
+addTechBtn.addEventListener('click', () => {
     const stackInputs = document.getElementById('stackInputs')
 
     const newRow = document.createElement('li')
@@ -28,30 +28,77 @@ addTachBtn.addEventListener('click', ev => {
     newRow.id = `inputRow-${rowIndex}`
     newRow.className = 'inputRow'
 
-    const tachNameLabel = creatLabel('Nome: ')
-    const tachNameInput = creatInputs()
+    const tachNameLabel = creatLabel('Nome: ', `techName-${rowIndex}`)
+    const tachNameInput = creatInputs(`techName-${rowIndex}`, 'techName')
+
+    const expLabel = creatLabel('Experiência: ')
+    const id1 = `expRadio-${rowIndex}.1`
+    const expRadio1 = creatInputs(
+        id1,
+        `techExp${rowIndex}`,
+        '0-2 anos',
+        'radio'
+    )
+    const labelRadio1 = creatLabel('0-2 anos', id1)
+
+    const id2 = `expRadio-${rowIndex}.2`
+    const expRadio2 = creatInputs(
+        id2,
+        `techExp${rowIndex}`,
+        '3-4 anos',
+        'radio'
+    )
+    const labelRadio2 = creatLabel('3-4 anos', id2)
+
+    const id3 = `expRadio-${rowIndex}.3`
+    const expRadio3 = creatInputs(id3, `techExp${rowIndex}`, '5+ anos', 'radio')
+    const labelRadio3 = creatLabel('5+ anos', id3)
+
+    const removeRowBtn = document.createElement('button')
+    removeRowBtn.type = 'button'
+    removeRowBtn.innerText = 'Remover'
+    removeRowBtn.addEventListener('click', () => {
+        stackInputs.removeChild(newRow)
+    })
+
+    newRow.append(
+        tachNameLabel,
+        tachNameInput,
+        expLabel,
+        expRadio1,
+        labelRadio1,
+        expRadio2,
+        labelRadio2,
+        expRadio3,
+        labelRadio3,
+        removeRowBtn
+    )
+
+    stackInputs.appendChild(newRow)
 })
-
-function newTechnology() {
-    const technologies = document.getElementById('technologies')
-    const technology = document.createElement('div')
-    technology.className = 'technology'
-    const labelTechnology = document.createElement('label')
-    labelTechnology.htmlFor = 'nameTechnology'
-    labelTechnology.innerText = 'Nome da tecnologia'
-    const inputTechnology = document.createElement('input')
-    inputTechnology.type = 'text'
-    inputTechnology.name = 'nameTechnology'
-    inputTechnology.id = 'nameTechnology'
-
-    technology.appendChild(labelTechnology)
-    technology.appendChild(inputTechnology)
-    technologies.appendChild(technology)
-    const quantidade = technologies.childElementCount
-    console.log(quantidade)
-}
-
 form.addEventListener('submit', ev => {
     ev.preventDefault()
-    newTechnology()
+    const fullnameInput = document.getElementById('devName')
+    const inputRows = document.querySelectorAll('.inputRow')
+
+    let technologies = []
+    inputRows.forEach(row => {
+        const techName = document.querySelector(
+            `#${row.id} input[name="techName"]`
+        ).value
+        const techExp = document.querySelector(
+            `#${row.id} input[type="radio"]:checked`
+        ).value
+        technologies.push({ name: techName, exp: techExp })
+    })
+
+    const newDev = { devName: fullnameInput.value, technologies }
+    developers.push(newDev)
+    alert('Dev cadastrado com sucesso!')
+
+    fullnameInput.value = ''
+    inputRows.forEach(row => {
+        row.remove()
+    })
+    console.table(developers)
 })
