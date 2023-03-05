@@ -21,7 +21,7 @@ document.getElementById('readLocal').addEventListener('click', () => {
     const input = document.getElementById('local')
     input.value = text
 })
-
+document.getelem
 document.getElementById('cookieBtn').addEventListener('click', () => {
     const input = document.getElementById('cookie')
     const cookie = `info=${input.value};`
