@@ -13,9 +13,3 @@ for (let i = 1; i <= quantidade; i++) {
     })
     console.log(palavraOculta)
 }
-// console.log(letras)
-// const espaco = ' '
-// const teste = console.log(typeof espaco)
-// console.log('')
-// console.log()
-// console.log('sssss')
