@@ -1,30 +1,19 @@
 const dayjs = require('dayjs')
 
-const date = date => {
+const birthday = date => {
     const birthday = dayjs(date)
-    const age = dayjs().diff(birthday, 'years')
-    const yearNow = dayjs().get('year')
-    console.log(`Você tem ${age} anos`)
+    const today = dayjs()
+    const age = today.diff(birthday, 'years')
+    console.log(`\nVocê tem ${age} anos`)
 
-    let nextBirthday = dayjs(date).set('year', yearNow)
-    const nextMonth = nextBirthday.diff(dayjs(), 'month', true)
-    const nextDay = nextBirthday.diff(dayjs(), 'day', true)
-    console.log(nextMonth)
-    console.log(nextDay)
-    if (nextMonth === 0 && nextDay === 0)
-        return console.log('Hoje você completa ano')
-    else if (nextMonth < 0 || nextDay < 0) {
-        nextBirthday = nextBirthday.add(1, 'year')
-    }
+    const nextBirthday = birthday.add(age + 1, 'year')
     console.log(
-        `Seu proximo aniversario é ${nextBirthday.format('DD/MM/YYYY')}`
+        `Seu próximo aniversario é ${nextBirthday.format('DD/MM/YYYY')}`
     )
+    const nextDaysToBirthday = nextBirthday.diff(dayjs(), 'day')
     console.log(
-        `Faltam ${nextBirthday.diff(
-            dayjs(),
-            'day'
-        )} dias para seu próximo aniversario`
+        `Faltam ${nextDaysToBirthday} dias para seu próximo aniversario\n`
     )
 }
 
-date('03/10/1994')
+birthday('1994/03/10')

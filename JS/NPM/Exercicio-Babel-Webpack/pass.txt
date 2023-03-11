@@ -1,0 +1,4 @@
+npm init -y
+//inicializando npm no projeto, o -y é para inicializar como informações padrão
+//criar as pastas /src e dentro dela a /style com um arquivo index.css
+npm i -D webpack webpack-cli @babel/core @babel/preset-env style-loader css-loader babel-loader
