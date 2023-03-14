@@ -7,6 +7,6 @@ class User {
     login(email, password) {
         if (this.email === email && this.password === password)
             console.log('Login bem sucedido');
-        else console.log('Login não foi bem sucedido');
+        else console.log('Email ou senha incorretos');
     }
 }
